@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STTech-2025</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@100;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      background-color: antiquewhite;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Tomorrow", sans-serif;
+      position: absolute;
+      z-index: -2;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container that holds both rows and vertically centers them */
+    .image-stack {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 190px; /* spacing between the two rows */
+      position: absolute;
+      z-index: -1;
+    }
+
+    .rotate-row {
+      transform: rotate(-20deg);
+      width: 120vw;
+      margin-left: -10vw;
+      margin-right: -10vw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
+      display: flex;
+      animation: moveLeft 4s linear infinite;
+    }
+
+    .wrapper.reverse {
+      animation: moveRight 4s linear infinite;
+    }
+
+    @keyframes moveLeft {
+      0% { transform: translateX(510px); }
+      100% { transform: translateX(-170px); }
+    }
+
+    @keyframes moveRight {
+      0% { transform: translateX(-170px); }
+      100% { transform: translateX(510px); }
+    }
+
+    .img {
+      margin: 10px;
+      width: 150px;
+      height: 100px;
+      background-color: lightgray;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #8f724d;
+    }
+
+    h1{
+        color: #8f724d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-stack">
+    
+    <!-- Top rotated row -->
+    <div class="rotate-row">
+      <div class="wrapper">
+        <div class="img">img1</div>
+        <div class="img">img2</div>
+        <div class="img">img3</div>
+        <div class="img">img4</div>
+        <div class="img">img1</div>
+        <div class="img">img2</div>
+        <div class="img">img3</div>
+        <div class="img">img4</div>
+      </div>
+    </div>
+
+    <!-- Bottom rotated row (opposite direction) -->
+    <div class="rotate-row">
+      <div class="wrapper reverse">
+        <div class="img">img1</div>
+        <div class="img">img2</div>
+        <div class="img">img3</div>
+        <div class="img">img4</div>
+        <div class="img">img1</div>
+        <div class="img">img2</div>
+        <div class="img">img3</div>
+        <div class="img">img4</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h1>STT 2025</h1>
+
+  <audio src="Million_Places.mp3" id="audio" autoplay muted></audio>
+
+  <script>
+    const audio = document.getElementById("audio");
+
+    document.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+      }
+      audio.muted = false;
+    });
+  </script>
+
+</body>
+</html>
