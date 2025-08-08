@@ -14,7 +14,7 @@
   <style>
     * {
       box-sizing: border-box;
-      background-color: antiquewhite;
+      background-color: #6f86a5;
     }
 
     html, body {
@@ -78,17 +78,22 @@
       margin: 10px;
       width: 150px;
       height: 100px;
-      background-color: lightgray;
+      background-color: #f9e1c5;
       border-radius: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: bold;
-      color: #8f724d;
+      color: #ffffff;
+      overflow: hidden;
     }
 
     h1{
         color: #8f724d;
+    }
+
+    .type1Image{
+      width: inherit;
     }
   </style>
 </head>
@@ -99,11 +104,11 @@
     <!-- Top rotated row -->
     <div class="rotate-row">
       <div class="wrapper">
-        <div class="img">img1</div>
+        <div class="img"><img src="Image01.jpg" class="type1Image"></div>
         <div class="img">img2</div>
         <div class="img">img3</div>
         <div class="img">img4</div>
-        <div class="img">img1</div>
+        <div class="img"><img src="Image01.jpg" class="type1Image"></div>
         <div class="img">img2</div>
         <div class="img">img3</div>
         <div class="img">img4</div>
@@ -126,7 +131,13 @@
 
   </div>
 
-  <h1>STT 2025</h1>
+  <!--<h1>STT 2025</h1>-->
+  <img src="Element5.PNG" style="
+  width: 260px; 
+  background-color: transparent;
+  transform: translateX(7px) rotate(-110deg);
+  filter: grayscale(100%) brightness(700%);
+  ">
 
   <audio src="Million_Places.mp3" id="audio" autoplay muted></audio>
 
