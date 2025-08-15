@@ -74,6 +74,29 @@
       100% { transform: translateX(510px); }
     }
 
+    @keyframes starAnim {
+      0%{
+        width: 150px;
+        transform: translate(-140px,100px) rotate(35deg);
+      }
+      25%{
+        width: 70px;
+        transform: translate(0px,0px) rotate(0deg);
+      }
+      50%{
+        width: 150px;
+        transform: translate(140px,-100px) rotate(-35deg);
+      }
+      75%{
+        width: 70px;
+        transform: translate(0px,0px) rotate(0deg);
+      }
+      100%{
+        width: 150px;
+        transform: translate(-140px,100px) rotate(35deg);
+      }
+    }
+
     .img {
       margin: 10px;
       width: 150px;
@@ -100,7 +123,7 @@
 <body>
 
   <div class="image-stack">
-    
+
     <!-- Top rotated row -->
     <div class="rotate-row">
       <div class="wrapper">
@@ -131,15 +154,26 @@
 
   </div>
 
+  <img src="media/metalStar.png" style="
+    position: absolute;
+    z-index: 2;
+    width: 150px;
+    background: transparent;
+    transform: translate(-140px,100px);
+    animation: starAnim 5s ease-out infinite;       
+    ">
+
   <!--<h1>STT 2025</h1>-->
   <img src="Element5.PNG" style="
   width: 260px; 
   background-color: transparent;
+  position: absolute;
+  z-index: 1;
   transform: translateX(7px) rotate(-110deg);
   filter: grayscale(100%) brightness(700%);
   ">
 
-  <audio src="Million_Places.mp3" id="audio" autoplay muted></audio>
+  <audio src="media/Little-Hazim.mp3" id="audio" autoplay muted></audio>
 
   <script>
     const audio = document.getElementById("audio");
